@@ -31,9 +31,6 @@ def isUniqueCharsUsingSorting(str):
 
 
 
-sol = isUniqueCharsUsingSorting("abcd")
-print(sol)
-
 test_cases = [
         ("abcd", True),
         ("s4fad", True),
@@ -43,3 +40,6 @@ test_cases = [
         ("".join([chr(val) for val in range(128)]), True),  # unique 128 chars
         ("".join([chr(val // 2) for val in range(129)]), False),  # non-unique 129 chars
 ]
+
+for test_case in test_cases:
+    print(test_case[1] == isUniqueCharsPython(test_case[0]))
