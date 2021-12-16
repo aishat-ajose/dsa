@@ -3,17 +3,17 @@
 # the integer in base 02. Assume 2 < bt,b2 < 16. Use " N' to represent L0, "B" for 1.L,.. ., and "F" fot
 # 15.
 
-def baseConversion(str, base1, base2):
-    str_base10 = toBase10(str, base1=base1)
+def baseConversion(int_str, base1, base2):
+    str_base10 = toBase10(int_str, base1=base1)
     return toBase2(str_base10, base2)
 
-def toBase10(str, base1):
+def toBase10(int_str, base1):
     str_base10 = 0
-    n = len(str)
+    n = len(int_str)
     current_pow = 0
 
-    while(current_pow < len(str)):
-        last_digit = ord(str[current_pow]) - ord('0')
+    while(current_pow < len(int_str)):
+        last_digit = ord(int_str[current_pow]) - ord('0')
         str_base10 += last_digit * (base1 ** (n - 1))
         n-=1
         current_pow += 1

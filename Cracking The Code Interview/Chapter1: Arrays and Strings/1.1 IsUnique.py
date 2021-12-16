@@ -1,13 +1,13 @@
 # Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you
 # cannot use additional data structures?
 
-def isUniqueCharsUsingSet(str):
-    if(len(str) > 128):
+def isUniqueCharsUsingSet(char_str):
+    if(len(char_str) > 128):
         return False
 
     char_set = [False] * 128
 
-    for char in str:
+    for char in char_str:
         val_in_char_set = ord(char)
         if char_set[val_in_char_set]:
             return False
@@ -17,12 +17,12 @@ def isUniqueCharsUsingSet(str):
     return True
 
 
-def isUniqueCharsPython(str):
-    return len(set(str)) == len(str)
+def isUniqueCharsPython(char_str):
+    return len(set(char_str)) == len(char_str)
 
 
-def isUniqueCharsUsingSorting(str):
-    sorted_str = sorted(str)
+def isUniqueCharsUsingSorting(char_str):
+    sorted_str = sorted(char_str)
     for i in range(1, len(str)):
         if sorted_str[i-1] == sorted_str[i]:
             return False
